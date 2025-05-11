@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -119,6 +118,68 @@ export default {
 					'50%': {
 						transform: 'scale(1.05)'
 					}
+				},
+				'bounce-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.3)'
+					},
+					'40%': {
+						opacity: '1',
+						transform: 'scale(1.05)'
+					},
+					'60%': {
+						transform: 'scale(0.95)'
+					},
+					'100%': {
+						transform: 'scale(1)'
+					}
+				},
+				'rotate-in': {
+					from: {
+						opacity: '0',
+						transform: 'rotateY(-90deg)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'rotateY(0)'
+					}
+				},
+				'flip-in': {
+					from: {
+						opacity: '0',
+						transform: 'perspective(400px) rotateX(90deg)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'perspective(400px) rotateX(0deg)'
+					}
+				},
+				'text-focus': {
+					'0%': {
+						filter: 'blur(12px)',
+						opacity: '0'
+					},
+					'100%': {
+						filter: 'blur(0px)',
+						opacity: '1'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'shine': {
+					from: {
+						backgroundPosition: '200% 0'
+					},
+					to: {
+						backgroundPosition: '-200% 0'
+					}
 				}
 			},
 			animation: {
@@ -127,7 +188,13 @@ export default {
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
 				'slide-in': 'slide-in 0.3s ease-out',
-				'pulse': 'pulse 2s infinite'
+				'pulse': 'pulse 2s infinite',
+				'bounce-in': 'bounce-in 0.6s cubic-bezier(0.19, 1.0, 0.22, 1.0)',
+				'rotate-in': 'rotate-in 0.5s ease-out',
+				'flip-in': 'flip-in 0.6s cubic-bezier(0.23, 1, 0.32, 1)',
+				'text-focus': 'text-focus 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both',
+				'float': 'float 3s ease-in-out infinite',
+				'shine': 'shine 1.5s linear infinite'
 			}
 		}
 	},

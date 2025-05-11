@@ -40,7 +40,10 @@ const SearchBar = ({ className }: SearchBarProps) => {
         <Input
           type="search"
           placeholder="Search products..."
-          className="pr-8 transition-all duration-200"
+          className={cn(
+            "pr-8 transition-all duration-200",
+            isFocused ? "shadow-md border-primary/50" : ""
+          )}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsFocused(true)}
@@ -65,6 +68,7 @@ const SearchBar = ({ className }: SearchBarProps) => {
         className="transition-transform duration-200 active:scale-95 hover:animate-pulse"
       >
         <Search className="h-4 w-4" />
+        <span className="sr-only">Search</span>
       </Button>
     </form>
   );
